@@ -1,28 +1,30 @@
-=== Python MRC Image Conversion Tools ===
+# Python MRC Image Conversion Tools
 
 These scritps require NumPy, SciPy, and PIL (python-imaging). An optional
 module is h5py which is required for reading v7.3 MATLAB images.
 
 On Linux you can install them using something similar to:
+```
  $ sudo yum install numpy scipy python-imaging libhdf5-dev
  $ sudo easy_install h5py
+```
 On Windows I recommend installing Python(x,y) which includes everything.
 
 Currently there are three Python scripts:
- * mrc2stack
- * stack2mrc
- * conv_img
+* mrc2stack
+* stack2mrc
+* conv_img
 
---- Formats Supported ---
+## Formats Supported
 For images, any format supported by SciPy / PIL is supported in addition to
 MetaFile formats (MHA and MHD) and reading MAT files. MHA/MHD/MAT files
 normally support many images per file, but only the first is read.
 
 Common supported SciPy / PIL formats:
- * PNG  (1-bit BW, 8-bit gray, 24-bit RGB)
- * BMP  (1-bit BW, 8-bit gray, 24-bit RGB)
- * TIFF (1-bit BW, 8-bit gray, 24-bit RGB)
- * JPEG (8-bit gray, 24-bit RGB)
+* PNG  (1-bit BW, 8-bit gray, 24-bit RGB)
+* BMP  (1-bit BW, 8-bit gray, 24-bit RGB)
+* TIFF (1-bit BW, 8-bit gray, 24-bit RGB)
+* JPEG (8-bit gray, 24-bit RGB)
 See http://www.pythonware.com/library/pil/handbook/formats.htm for all details
 
 The format used is based on the file extension (included in the output for
@@ -33,20 +35,18 @@ format as the input data or the converted mode. For example, PNG does not
 support floating-point formats so using -mfloat (see below) will not work and
 writing to a PNG will not work.
 
-
---- Image Processing Options ---
+## Image Processing Options
 All programs support the options --sigma (or -s) and --flip (or -f). Sigma
 blurs the image with a Gaussian blur using the given sigma value (positive real
 number). Flipping flips the image top to bottom when saving.
 
 For mrc2stack and conv_img you can also convert the data itself by using --mode
 (or -m) with one of the following:
- * 'float'   - output a 32-bit floating-point number output scaled to 0.0-1.0
- * 'label'   - output an consecutively numbered image using con. components
- * 'relabel' - output an consecutively re-numbered label data image
+* 'float'   - output a 32-bit floating-point number output scaled to 0.0-1.0
+* 'label'   - output an consecutively numbered image using con. components
+* 'relabel' - output an consecutively re-numbered label data image
 
-
---- Conversion from MRC stack: mrc2stack ---
+## Conversion from MRC stack: mrc2stack
 MRC files are any files that are IMOD image stacks (they may have different
 file extensions, such as REC, ST, ALI, or PRE-ALI). The input is the MRC file
 while the output is a directory where all the different slices will be output.
@@ -62,15 +62,13 @@ slice it came from, with leading 0s if necessary. To change this use -e or
 using %03d for the slice number as 3 digits with leading zeros or just %d for
 the number.
 
-
---- Conversion to MRC stack: stack2mrc ---
+## Conversion to MRC stack: stack2mrc
 When writing an MRC you supply many input files before you give the output MRC
 file. The input files can be different file types but must all have the same
 pixel format and dimensions. Additionally, you can use inputs that have
 glob-like syntax (e.g. folder/*.png, [0-9][0-9].png, etc).
 
-
-== Python Coding ==
+## Python Coding
 You can also directly call the above tools from Python code by importing the
 function from the file (e.g. from mrc2stack import mrc2stack). Use the built-in
 Python help functions for the documentation of each function.
