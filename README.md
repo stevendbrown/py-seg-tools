@@ -77,6 +77,7 @@ There is also a complete MRC class and various other utility functions in
 images.py. MRC class is currently not really documented.
 
 The utility functions (for more details see built-in Python help):
+
 |gauss_blur(im, sigma = 1.0) | Blur an image using a Gaussian blur (requires SciPy)|
 |flip_up_down(im)            | Flips an image from top-bottom as a view (not a copy)|
 |label(im)                   | Creates a consecutively numbered image using connected components|
@@ -89,6 +90,7 @@ The utility functions (for more details see built-in Python help):
 |is_image(im)                | True if the data represents an image|
 
 Additionally, there are dtypes for the different image types:
+
 |IM_BYTE      | unsigned 8-bit grayscale|
 |IM_SBYTE     | signed 8-bit grayscale|
 |IM_SHORT     | signed 16-bit grayscale (little-endian)|
