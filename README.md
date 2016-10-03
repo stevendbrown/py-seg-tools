@@ -77,33 +77,33 @@ There is also a complete MRC class and various other utility functions in
 images.py. MRC class is currently not really documented.
 
 The utility functions (for more details see built-in Python help):
-gauss_blur(im, sigma = 1.0) -- Blur an image using a Gaussian blur (requires SciPy)
-flip_up_down(im)            -- Flips an image from top-bottom as a view (not a copy)
-label(im)                   -- Creates a consecutively numbered image using connected components
-relabel(im)                 -- Renumbers an image to be consecutively numbered
-float_image(im, in_scale=None, out_scale=(0.0,1.0)) - Convert an image into a 32-bit floating-point image by scaling the data
-imread(filename)            -- Read an image
-imsave(filename, im)        -- Save an image
-is_rgb24(im)                -- True if the data represents an 24-bit RGB image
-is_image_besides_rgb24(im)  -- True if the data represents an image beside a 24-bit RGB image
-is_image(im)                -- True if the data represents an image
+|gauss_blur(im, sigma = 1.0) | Blur an image using a Gaussian blur (requires SciPy)|
+|flip_up_down(im)            | Flips an image from top-bottom as a view (not a copy)|
+|label(im)                   | Creates a consecutively numbered image using connected components|
+|relabel(im)                 | Renumbers an image to be consecutively numbered|
+|float_image(im, in_scale=None, out_scale=(0.0,1.0)) | Convert an image into a 32-bit floating-point image by scaling the data|
+|imread(filename)            | Read an image|
+|imsave(filename, im)        | Save an image|
+|is_rgb24(im)                | True if the data represents an 24-bit RGB image|
+|is_image_besides_rgb24(im)  | True if the data represents an image beside a 24-bit RGB image|
+|is_image(im)                | True if the data represents an image|
 
 Additionally, there are dtypes for the different image types:
-IM_BYTE      -- unsigned 8-bit grayscale
-IM_SBYTE     -- signed 8-bit grayscale
-IM_SHORT     -- signed 16-bit grayscale (little-endian)
-IM_SHORT_BE  -- signed 16-bit grayscale (big-endian)
-IM_USHORT    -- unsigned 16-bit grayscale (little-endian)
-IM_USHORT_BE -- unsigned 16-bit grayscale (big-endian)
-IM_INT       -- signed 32-bit grayscale (little-endian)
-IM_INT_BE    -- signed 32-bit grayscale (big-endian)
-IM_UINT      -- unsigned 32-bit grayscale (little-endian)
-IM_UINT_BE   -- unsigned 32-bit grayscale (big-endian)
-IM_LONG      -- signed 64-bit grayscale (little-endian)
-IM_LONG_BE   -- signed 64-bit grayscale (big-endian)
-IM_ULONG     -- unsigned 64-bit grayscale (little-endian)
-IM_ULONG_BE  -- unsigned 64-bit grayscale (big-endian)
-IM_RGB24     -- 24-bit RGB (color is on third axis as bytes, cannot be easily tested)
-IM_RGB24_STRUCT -- 24-bit RGB (color is with R, G, and B fields as bytes)
-IM_FLOAT     -- 32-bit floating-point grayscale
-IM_DOUBLE    -- 64-bit floating-point grayscale
+|IM_BYTE      | unsigned 8-bit grayscale|
+|IM_SBYTE     | signed 8-bit grayscale|
+|IM_SHORT     | signed 16-bit grayscale (little-endian)|
+|IM_SHORT_BE  | signed 16-bit grayscale (big-endian)|
+|IM_USHORT    | unsigned 16-bit grayscale (little-endian)|
+|IM_USHORT_BE | unsigned 16-bit grayscale (big-endian)|
+|IM_INT       | signed 32-bit grayscale (little-endian)|
+|IM_INT_BE    | signed 32-bit grayscale (big-endian)|
+|IM_UINT      | unsigned 32-bit grayscale (little-endian)|
+|IM_UINT_BE   | unsigned 32-bit grayscale (big-endian)|
+|IM_LONG      | signed 64-bit grayscale (little-endian)|
+|IM_LONG_BE   | signed 64-bit grayscale (big-endian)|
+|IM_ULONG     | unsigned 64-bit grayscale (little-endian)|
+|IM_ULONG_BE  | unsigned 64-bit grayscale (big-endian)|
+|IM_RGB24     | 24-bit RGB (color is on third axis as bytes, cannot be easily tested)|
+|IM_RGB24_STRUCT | 24-bit RGB (color is with R, G, and B fields as bytes)|
+|IM_FLOAT     | 32-bit floating-point grayscale|
+|IM_DOUBLE    | 64-bit floating-point grayscale|
